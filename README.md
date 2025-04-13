@@ -68,7 +68,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 # GlamFit
-
-95948081e97ae1eaf1745261dedde1bcf32be8db
-# GlamFit
 001d471b25df81a42462060301d4b1502121287c
