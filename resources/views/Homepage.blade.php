@@ -41,14 +41,48 @@
           <a href="#" class="cta">Explore Now</a>
         </div>
         <div class="image_hero">
-          <img src="Asset/hero_img.png" alt="Gambarhome" >
+          <img src="Asset/hero_img.png" alt="GambarHero">
+        </div>
      </section>
 
     <!-- Hero Section End -->
 
+    <!-- About Us Start -->
+     <section class="about" id="About">
+        <div class="image_about">
+          <img src="Asset/about.png" alt="GambarAbout">
+        </div>
+        <div class="content_about">
+          <h1>About Us</h1>
+          <p>GlamFit adalah platform penyewaan kebaya, jas, dan layanan make-up yang dirancang untuk membantu Anda tampil sempurna di setiap momen spesial. Kami memahami betapa pentingnya setiap detail dalam acara istimewa Anda, 
+            mulai dari penampilan yang anggun hingga layanan yang mudah dan praktis. </p>
+          <a href="#" class="ctb">Check our product</a>
+      </div>
+     </section>
 
+    <!-- About Us End -->
 
+    {{-- Make up  --}}
 
+    <div class="makeup-section">
+      <h1 >Make Up</h1>
+      <div class="makeup-grid">
+          @foreach ($makeups as $makeup)
+          <div class="makeup-card">
+              <img src="{{ asset($makeup->image) }}" class="makeup-img" alt="{{ $makeup->name }}">
+              <div class="makeup-info">
+                  <h2 class="makeup-name">{{ $makeup->name }}</h2>
+                  <div class="makeup-bottom">
+                      <p class="makeup-price">Rp{{ number_format($makeup->price, 0, ',', '.') }}</p>
+                      <a href="#" class="order-btn">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          @endforeach
+      </div>
+  </div>
+  
+    {{-- make up end --}}
 
 
      <!-- feather icon -->

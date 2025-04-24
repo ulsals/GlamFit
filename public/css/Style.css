@@ -21,6 +21,57 @@ body{
     min-height: 2000px;
    
 }
+
+p {
+    font-family: poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 0;
+    text-align: justify;
+}
+
+h1 {
+    font-family: rufina, sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.cta{
+    margin-top: 16px;
+    display: inline-block;
+    padding : 10px 20px;
+    font-size:14px ;
+    font-family: poppins, sans-serif;
+    color : var(--second);
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+.cta:hover{
+    background: var(--second);
+    color: var(--primary);
+}
+
+.ctb{
+    margin-top: 16px;
+    display: inline-block;
+    padding : 10px 20px;
+    font-size:14px ;
+    font-family: poppins, sans-serif;
+    color : var(--primary);
+    background-color: var(--second);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.ctb:hover{
+    background: var(--primary);
+    color: var(--second);
+}
+
 /* navbar */
 .navbar{
     display: flex;
@@ -75,6 +126,7 @@ body{
 #hamburger-menu{
     display: none;
 }
+/* navbar done */
 
 /* Hero Section */
 .hero{
@@ -83,39 +135,115 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 20px 4%;
-   
 }
 
 .hero .content{
     width: 37%;
 }
 
-.hero .content h1{
-    font-family: rufina, sans-serif;
-    font-size: 52px;
-    font-weight:bold;
-    padding: 10px 0;
-}
-
-.hero .content p {
-    font-family: poppins, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px 0;
-}
 .hero .image_hero  {
     margin-top: 80px;
     width: 50%;
 }
 
-.hero .content .cta{
-    margin-top: 16px;
-    display: inline-block;
-    padding : 10 px 20px;
-    font-size:16px ;
+/* hero done */
+
+/* About */
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 4%;
+}
+
+.about .content_about{
+    width: 45%;
+}
+
+.about .image_about{
+    margin-top: 80px;
+    width: 50%;     
+    height: auto;
+}
+/* About done */
+
+/* Card id make up */
+.makeup-section {
+    padding: 2rem 4%;
+}
+
+.makeup-grid {
+    margin-top : 1rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    justify-items: center;
+}
+
+.makeup-card {
+    background: var(--second);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 240px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.makeup-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.makeup-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.makeup-info {
+    background: var(--second);
+    padding: 1rem;
+}
+
+.makeup-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.makeup-price {
+    font-weight: bold;
+    margin: 0;
+}
+
+.makeup-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.order-btn {
+    background: #1e2a3a;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size:14px ;
+    font-family: poppins, sans-serif;
+    color : var(--second);
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* transition: background 0.3s; */
+}
+
+.order-btn:hover {
+    background: var(--second);
+    color: var(--primary);
 }
 
 
+/* Card id make up done */
 
 /* Media Queries */
 /* Laptop */
@@ -132,17 +260,16 @@ body{
 /* Tablet */
 @media screen and (max-width:820px){
     html{
-        font-size: 75%;
+        font-size: 60%;
     }
-    img {
-        max-width: 100%; 
-        height: auto;
-    }
-
+    
     #hamburger-menu{
         display: inline-block;
     }
 
+    .navbar .logo{
+        width: 20%;
+    }
     .navbar .menu{
         position: absolute;
         top : 100%;
@@ -160,7 +287,7 @@ body{
 
       .navbar .menu a{
         display: block;
-        margin: 1.5 rem;
+        margin: 1.5rem;
         padding: 8px;
         font-size: 2rem;
       }
@@ -178,25 +305,82 @@ body{
         transform: scaleX(0.5); 
     }
 
-    .hero .content h1{
-        font-size: 45px;
+    .hero .content {  
+        margin-top: 5rem ; 
+        width: 45%; 
     }
 
+    h1{
+        font-size: 35px;
+    }
 
-}
+    .hero .image_hero{
+        width: 55%;
+        height: auto;
+    }
+
+    .about .image_about {
+        width: 50%;
+        height: auto;
+    }
+
+   
 
 /* mobile phone */
 @media screen and (max-width:500px){
     html{
         font-size: 55%;
     }
-    img {
-        max-width: 100%; 
-    }
-
+    
     #hamburger-menu{
         display: inline-block;
     }
 
-    
+    .navbar .logo{
+        width: 25%;
+    }
+
+    .hero {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .hero .content {  
+        align-items: flex-start; 
+        margin-top: 5rem; 
+        width: 80%; 
+        flex-direction: column; 
+    }
+
+   
+    .hero .image_hero {  
+        width: 100%;  
+        margin-top: 5rem; 
+        text-align: center; 
+    }
+
+    .about{
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .about .content_about {  
+        align-items: flex-start; 
+        margin-top: 5rem; 
+        width: 80%; 
+        flex-direction: column; 
+    }
+
+    .about .image_about {  
+        width: 90%;  
+        margin-top: 5rem; 
+        text-align: center; 
+    }
+}
 }
