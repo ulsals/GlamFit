@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\MakeupController;
+use App\Http\Controllers\KebayaController;
 
 Route::get('/', function () {
     return view('homepage');

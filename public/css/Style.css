@@ -172,7 +172,33 @@ h1 {
     padding: 2rem 4%;
 }
 
-.makeup-grid {
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .line-decor {
+    display: flex;
+    align-items: center;
+  }
+  
+  .line {
+    width: 350px;
+    height: 3px;
+    background-color: black;
+    margin-right: 5px;
+  }
+  
+  .diamond {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    transform: rotate(45deg);
+  }
+
+.grid {
     margin-top : 1rem;
     display: grid;
     gap: 1.5rem;
@@ -180,44 +206,44 @@ h1 {
     justify-items: center;
 }
 
-.makeup-card {
+.card {
     background: var(--second);
     border-radius: 16px;
     overflow: hidden;
     width: 100%;
-    max-width: 240px;
+    max-width: 270px;
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
-.makeup-card:hover {
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0,0,0,0.2);
 }
 
-.makeup-img {
+.card-img {
     width: 100%;
     height: 280px;
     object-fit: cover;
 }
 
-.makeup-info {
+.info {
     background: var(--second);
     padding: 1rem;
 }
 
-.makeup-name {
+.card-name {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-.makeup-price {
+.price {
     font-weight: bold;
     margin: 0;
 }
 
-.makeup-bottom {
+.card-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -241,9 +267,15 @@ h1 {
     background: var(--second);
     color: var(--primary);
 }
-
-
 /* Card id make up done */
+
+/* card kebaya start */
+.kebaya-section {
+    padding: 2rem 4%;
+}
+
+
+/* card kebadaya done */
 
 /* Media Queries */
 /* Laptop */
@@ -324,7 +356,20 @@ h1 {
         height: auto;
     }
 
-   
+    /* makeup */
+    .line {
+        width: 110px;
+      }
+    
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom pada layar kecil */
+      }
+    }
 
 /* mobile phone */
 @media screen and (max-width:500px){
@@ -382,5 +427,16 @@ h1 {
         margin-top: 5rem; 
         text-align: center; 
     }
+
+    .makeup{
+        margin-top: 5rem;
+        margin-left: 3rem;
+        padding: 1rem;
+    }
+
+    .grid {
+        grid-template-columns:1fr; 
+      }
+    
 }
-}
+

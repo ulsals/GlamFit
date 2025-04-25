@@ -19,7 +19,7 @@
             </div>
             <div class="menu">
                 <a href="#home">Home</a>
-                <a href="#makeUp">Make Up</a>
+                <a href="#makeup">Make Up</a>
                 <a href="#kebaya">Kebaya</a>
                 <a href="#jas">Jas</a>
                 <a href="#ContactUs">Contact Us</a>
@@ -38,7 +38,7 @@
         <p>Kami menyediakan kebaya hingga jas  dan layanan make-up terbaik, 
           kami siap membantu Anda tampil memukau di hari penting Anda. 
           Elegan, praktis, dan terjangkau. </p>
-          <a href="#" class="cta">Explore Now</a>
+          <a href="#makeup" class="cta">Explore Now</a>
         </div>
         <div class="image_hero">
           <img src="Asset/hero_img.png" alt="GambarHero">
@@ -56,24 +56,31 @@
           <h1>About Us</h1>
           <p>GlamFit adalah platform penyewaan kebaya, jas, dan layanan make-up yang dirancang untuk membantu Anda tampil sempurna di setiap momen spesial. Kami memahami betapa pentingnya setiap detail dalam acara istimewa Anda, 
             mulai dari penampilan yang anggun hingga layanan yang mudah dan praktis. </p>
-          <a href="#" class="ctb">Check our product</a>
+          <a href="#makeup" class="ctb">Check our product</a>
       </div>
      </section>
 
     <!-- About Us End -->
 
     {{-- Make up  --}}
-
+    <section class="makeup" id="makeup">
     <div class="makeup-section">
+      <div class="section-title">
       <h1 >Make Up</h1>
-      <div class="makeup-grid">
+      <div class="line-decor">
+        <span class="line"></span>
+        <span class="diamond"></span>
+      </div>
+      </div>
+
+      <div class="grid">
           @foreach ($makeups as $makeup)
-          <div class="makeup-card">
-              <img src="{{ asset($makeup->image) }}" class="makeup-img" alt="{{ $makeup->name }}">
-              <div class="makeup-info">
-                  <h2 class="makeup-name">{{ $makeup->name }}</h2>
-                  <div class="makeup-bottom">
-                      <p class="makeup-price">Rp{{ number_format($makeup->price, 0, ',', '.') }}</p>
+          <div class="card">
+              <img src="{{ asset($makeup->image) }}" class="card-img" alt="{{ $makeup->name }}">
+              <div class="info">
+                  <h2 class="card-name">{{ $makeup->name }}</h2>
+                  <div class="card-bottom">
+                      <p class="card-price">Rp{{ number_format($makeup->price, 0, ',', '.') }}</p>
                       <a href="#" class="order-btn">Order Now</a>
                   </div>
               </div>
@@ -81,10 +88,38 @@
           @endforeach
       </div>
   </div>
-  
+  </section>
     {{-- make up end --}}
 
+    {{-- Kebaya Start --}}
 
+    <section class="kebaya" id="kebaya">
+      <div class="kebaya-section">
+        <div class="section-title">
+        <h1 >Kebaya</h1>
+        <div class="line-decor">
+          <span class="line"></span>
+          <span class="diamond"></span>
+        </div>
+        </div>
+
+        <div class="grid">
+          @foreach ($kebayas as $kebaya)
+            <div class="card">
+              <img src="{{ asset($kebaya->image) }}" class="card-img" alt="{{ $kebaya->name }}">
+              <div class="info">
+                <h2>{{ $kebaya->name }}</h2>
+                <p>{{ $kebaya->description }}</p>
+                <div class="card-bottom">
+                  <p class="card-price">Rp{{ number_format($kebaya->price, 0, ',', '.') }}</p>
+                  <a href="#" class="order-btn">Check It</a>
+              </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </div>
+      </section>
      <!-- feather icon -->
      <script>
         feather.replace();

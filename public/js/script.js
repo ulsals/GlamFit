@@ -13,3 +13,5 @@ document.addEventListener('click', function(e){
     if (!hamburger.contains(e.target) && !menu.contains(e.target))
         menu.classList.remove('active');
     });
+
+  
