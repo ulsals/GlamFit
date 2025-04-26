@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/Style.css">
      <!-- feather icon -->
      <script src="https://unpkg.com/feather-icons"></script> 
+     {{-- library aos --}}
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
                 <a href="#makeup">Make Up</a>
                 <a href="#kebaya">Kebaya</a>
                 <a href="#jas">Jas</a>
-                <a href="#ContactUs">Contact Us</a>
+                <a href="#contact">Contact Us</a>
             </div>
 
             <div class="navbar-extra">
@@ -34,14 +36,14 @@
     <!-- Hero Section Start -->
      <section class="hero" id="home">
       <div class="content">
-        <h1>Tampil Sempurna di Setiap Momen Bersama GlamFit</h1>
-        <p>Kami menyediakan kebaya hingga jas  dan layanan make-up terbaik, 
+        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" >Tampil Sempurna di Setiap Momen Bersama GlamFit</h1>
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Kami menyediakan kebaya hingga jas  dan layanan make-up terbaik, 
           kami siap membantu Anda tampil memukau di hari penting Anda. 
           Elegan, praktis, dan terjangkau. </p>
-          <a href="#makeup" class="cta">Explore Now</a>
+          <a href="#makeup" class="cta" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Explore Now</a>
         </div>
-        <div class="image_hero">
-          <img src="Asset/hero_img.png" alt="GambarHero">
+        <div class="image_hero" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <img src="Asset/hero_img.png" alt="GambarHero"  >
         </div>
      </section>
 
@@ -49,14 +51,14 @@
 
     <!-- About Us Start -->
      <section class="about" id="About">
-        <div class="image_about">
+        <div class="image_about" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
           <img src="Asset/about.png" alt="GambarAbout">
         </div>
         <div class="content_about">
-          <h1>About Us</h1>
-          <p>GlamFit adalah platform penyewaan kebaya, jas, dan layanan make-up yang dirancang untuk membantu Anda tampil sempurna di setiap momen spesial. Kami memahami betapa pentingnya setiap detail dalam acara istimewa Anda, 
+          <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">About Us</h1>
+          <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">GlamFit adalah platform penyewaan kebaya, jas, dan layanan make-up yang dirancang untuk membantu Anda tampil sempurna di setiap momen spesial. Kami memahami betapa pentingnya setiap detail dalam acara istimewa Anda, 
             mulai dari penampilan yang anggun hingga layanan yang mudah dan praktis. </p>
-          <a href="#makeup" class="ctb">Check our product</a>
+          <a href="#makeup" class="ctb" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">Check our product</a>
       </div>
      </section>
 
@@ -66,16 +68,16 @@
     <section class="makeup" id="makeup">
     <div class="makeup-section">
       <div class="section-title">
-      <h1 >Make Up</h1>
-      <div class="line-decor">
+      <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Make Up</h1>
+      <div class="line-decor" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
         <span class="line"></span>
         <span class="diamond"></span>
       </div>
       </div>
 
-      <div class="grid">
+      <div class="grid" >
           @foreach ($makeups as $makeup)
-          <div class="card">
+          <div class="card" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="200">
               <img src="{{ asset($makeup->image) }}" class="card-img" alt="{{ $makeup->name }}">
               <div class="info">
                   <h2 class="card-name">{{ $makeup->name }}</h2>
@@ -95,8 +97,8 @@
     <section class="kebaya" id="kebaya">
       <div class="kebaya-section">
         <div class="section-title">
-        <h1 >Kebaya</h1>
-        <div class="line-decor">
+        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" >Kebaya</h1>
+        <div class="line-decor" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
           <span class="line"></span>
           <span class="diamond"></span>
         </div>
@@ -104,7 +106,7 @@
 
         <div class="grid">
           @foreach ($kebayas as $kebaya)
-            <div class="card">
+            <div class="card" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="200">
               <img src="{{ asset($kebaya->image) }}" class="card-img" alt="{{ $kebaya->name }}">
               <div class="info">
                 <h2>{{ $kebaya->name }}</h2>
@@ -124,8 +126,8 @@
       <section class="jas" id="jas">
         <div class="jas-section">
           <div class="section-title">
-          <h1 >Jas</h1>
-          <div class="line-decor">
+          <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Jas</h1>
+          <div class="line-decor" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
             <span class="line"></span>
             <span class="diamond"></span>
           </div>
@@ -133,7 +135,7 @@
   
           <div class="grid">
             @foreach ($jas as $jas)
-              <div class="card">
+              <div class="card" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="200">
                 <img src="{{ asset($jas->image) }}" class="card-img" alt="{{ $jas->name }}">
                 <div class="info">
                   <h2>{{ $jas->name }}</h2>
@@ -150,12 +152,53 @@
         </section>
       {{-- Jas End --}}
 
+      {{-- Footer start --}}
+      <footer data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+         <div class="footer-top" id="contact">
+            <img src="Asset/GlamFit.png" alt="Logo" class="logo-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h1>GlamFit</h1>
+            </div>
+    
+            <div class="footer-section">
+                <h3>NAVIGATION</h3>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#makeup">MAKE UP</a></li>
+                    <li><a href="#kebaya">KEBAYA</a></li>
+                    <li><a href="#jas">JAS</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li>📧 glamfit@gmail.com</li>
+                    <li>📍 Jl. Merak Alam, Jakarta Pusat, Indonesia</li>
+                    <li>📞 +62 8532 1234 560</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 GlamFit</p>
+        </div>
+    </footer>
+      {{-- Footer end --}}
+
      <!-- feather icon -->
      <script>
         feather.replace();
       </script>
     <script src="script.js"></script>   
 
+    {{-- library aos --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
     <!-- Javascript -->
     <script src="js/script.js"></script>
