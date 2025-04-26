@@ -70,6 +70,7 @@ h1 {
 .ctb:hover{
     background: var(--primary);
     color: var(--second);
+    
 }
 
 /* navbar */
@@ -260,12 +261,14 @@ h1 {
     color : var(--second);
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
     /* transition: background 0.3s; */
 }
 
 .order-btn:hover {
     background: var(--second);
     color: var(--primary);
+    border-color: var(--primary);
 }
 /* Card id make up done */
 
@@ -273,9 +276,13 @@ h1 {
 .kebaya-section {
     padding: 2rem 4%;
 }
-
-
 /* card kebadaya done */
+
+/* card jas start */
+.jas-section {
+    padding: 2rem 4%;
+}
+/* card jas end */
 
 /* Media Queries */
 /* Laptop */

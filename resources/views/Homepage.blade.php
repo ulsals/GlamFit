@@ -92,7 +92,6 @@
     {{-- make up end --}}
 
     {{-- Kebaya Start --}}
-
     <section class="kebaya" id="kebaya">
       <div class="kebaya-section">
         <div class="section-title">
@@ -120,6 +119,37 @@
         </div>
       </div>
       </section>
+
+      {{-- Jas Start  --}}
+      <section class="jas" id="jas">
+        <div class="jas-section">
+          <div class="section-title">
+          <h1 >Jas</h1>
+          <div class="line-decor">
+            <span class="line"></span>
+            <span class="diamond"></span>
+          </div>
+          </div>
+  
+          <div class="grid">
+            @foreach ($jas as $jas)
+              <div class="card">
+                <img src="{{ asset($jas->image) }}" class="card-img" alt="{{ $jas->name }}">
+                <div class="info">
+                  <h2>{{ $jas->name }}</h2>
+                  <p>{{ $jas->description }}</p>
+                  <div class="card-bottom">
+                    <p class="card-price">Rp{{ number_format($jas->price, 0, ',', '.') }}</p>
+                    <a href="#" class="order-btn">Check It</a>
+                </div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+        </div>
+        </section>
+      {{-- Jas End --}}
+
      <!-- feather icon -->
      <script>
         feather.replace();

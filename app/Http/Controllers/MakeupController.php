@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Makeup;
 use Illuminate\Http\Request;
 use App\Models\Kebaya;
+use App\Models\Jas;
 
 class MakeupController extends Controller
 {
@@ -11,7 +12,8 @@ class MakeupController extends Controller
         //ambil semua data makeup
         $makeups = Makeup::all();
         $kebayas = Kebaya::all(); 
-        //menampilkan data ke view "homepage"
-        return view('homepage', compact('makeups', 'kebayas'));
+        $jas = Jas::all();
+        return view('homepage', compact('makeups', 'kebayas', 'jas'));
+        
     }
 }
