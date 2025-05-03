@@ -14,4 +14,36 @@ document.addEventListener('click', function(e){
         menu.classList.remove('active');
     });
 
-  
+//modal pop up 
+function openModal(id, nama, gambar) {
+    document.getElementById('modalTitle').innerText = nama;
+    document.getElementById('modalImage').src = gambar;
+    document.getElementById('layananId').value = id;
+    document.getElementById('orderModal').style.display = 'block';
+
+    document.getElementById('jumlahInput').value = 1;
+    document.getElementById('pesanModal').classList.remove('hidden');
+}
+
+function closeModal() {
+    document.getElementById('orderModal').style.display = 'none';
+}
+
+
+window.onclick = function(event) {
+    const modal = document.getElementById('orderModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// popup pesanan diterima
+
+/document.getElementById('pesanButton').addEventListener('click', function () {
+    Swal.fire({
+        icon: 'success',
+        title: 'Pemesanan Berhasil!',
+        text: 'Silahkan Tunggu Konfirmasi Pemesanan dari Admin GlamFit 😊',
+        confirmButtonText: 'OK'
+    });
+});

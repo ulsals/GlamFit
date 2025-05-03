@@ -10,6 +10,9 @@
      <script src="https://unpkg.com/feather-icons"></script> 
      {{-- library aos --}}
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     {{-- SweetAlert2 --}}
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -83,7 +86,10 @@
                   <h2 class="card-name">{{ $makeup->name }}</h2>
                   <div class="card-bottom">
                       <p class="card-price">Rp{{ number_format($makeup->price, 0, ',', '.') }}</p>
-                      <a href="#" class="order-btn">Order Now</a>
+                      <a href="javascript:void(0)" class="order-btn" 
+                        onclick="openModal({{ $makeup->id }}, '{{ $makeup->name }}', '{{ asset($makeup->image) }}')">
+                        Order Now
+                      </a>
                   </div>
               </div>
           </div>
@@ -92,7 +98,7 @@
   </div>
   </section>
     {{-- make up end --}}
-
+    
     {{-- Kebaya Start --}}
     <section class="kebaya" id="kebaya">
       <div class="kebaya-section">
@@ -113,7 +119,8 @@
                 <p>{{ $kebaya->description }}</p>
                 <div class="card-bottom">
                   <p class="card-price">Rp{{ number_format($kebaya->price, 0, ',', '.') }}</p>
-                  <a href="#" class="order-btn">Check It</a>
+                  <a href="javascript:void(0)" class="order-btn" 
+                  onclick="openModal({{ $kebaya->id }}, '{{ $kebaya->name }}', '{{ asset($kebaya->image) }}')">Check It</a>
               </div>
               </div>
             </div>
@@ -121,6 +128,7 @@
         </div>
       </div>
       </section>
+      
 
       {{-- Jas Start  --}}
       <section class="jas" id="jas">
@@ -142,7 +150,8 @@
                   <p>{{ $jas->description }}</p>
                   <div class="card-bottom">
                     <p class="card-price">Rp{{ number_format($jas->price, 0, ',', '.') }}</p>
-                    <a href="#" class="order-btn">Check It</a>
+                    <a href="javascript:void(0)" class="order-btn" 
+                  onclick="openModal({{ $jas->id }}, '{{ $jas->name }}', '{{ asset($jas->image) }}')">Check It</a>
                 </div>
                 </div>
               </div>
@@ -151,6 +160,30 @@
         </div>
         </section>
       {{-- Jas End --}}
+
+   {{-- pop up start --}}
+   <div id="orderModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div style="display: flex; gap: 30px;">
+            <img id="modalImage" src="" width="200">
+            <form id="form-pesan" method="POST" action="{{ route('layanan.pesan') }}">
+                @csrf
+                <h2 id="modalTitle"></h2>
+                <p>Data Pembeli</p>
+                <input type="hidden" name="layanan_id" id="layananId">
+                <p>Nama</p>
+                <input type="text" name="nama" placeholder="Nama" required>
+                <p>Nomor WhatsApp</p>
+                <input type="text" name="whatsapp" placeholder="Nomor WhatsApp" required>
+                <p>Tanggal Sewa</p>
+                <input type="date" name="tanggal_sewa" required>
+                <button id="pesanButton" type="submit" class="order-btn">PESAN</button>
+            </form>
+        </div>
+    </div>
+</div>
+  {{-- pop up end --}}
 
       {{-- Footer start --}}
       <footer data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
@@ -192,7 +225,7 @@
      <script>
         feather.replace();
       </script>
-    <script src="script.js"></script>   
+    {{-- <script src="script.js"></script>    --}}
 
     {{-- library aos --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
