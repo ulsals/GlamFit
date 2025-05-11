@@ -39,11 +39,29 @@ window.onclick = function(event) {
 
 // popup pesanan diterima
 
-/document.getElementById('pesanButton').addEventListener('click', function () {
-    Swal.fire({
-        icon: 'success',
-        title: 'Pemesanan Berhasil!',
-        text: 'Silahkan Tunggu Konfirmasi Pemesanan dari Admin GlamFit 😊',
-        confirmButtonText: 'OK'
-    });
+document.getElementById('pesanButton').addEventListener('click', function (e) {
+    e.preventDefault(); // Mencegah submit default
+
+    const form = document.getElementById('form-pesan');
+    const nama = form.querySelector('input[name="nama"]').value.trim();
+    const whatsapp = form.querySelector('input[name="whatsapp"]').value.trim();
+    const tanggal_sewa = form.querySelector('input[name="tanggal_sewa"]').value;
+
+    if (!nama || !whatsapp || !tanggal_sewa) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Data Belum Lengkap',
+            text: 'Silakan lengkapi semua data sebelum memesan.',
+            confirmButtonText: 'OK'
+        });
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Pemesanan Berhasil!',
+            text: 'Silakan tunggu konfirmasi pemesanan dari Admin GlamFit 😊',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            form.submit(); // Submit form setelah konfirmasi
+        });
+    }
 });
