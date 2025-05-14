@@ -129,6 +129,39 @@ h1 {
 }
 /* navbar done */
 
+/* weather start */
+/* Weather Bar Styles */
+.weather-bar {
+  margin-top: 60px;
+  margin-bottom: 4rem;
+  padding: 20px 4%;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, #bfdbfe, #60a5fa);
+  color: #1e3a8a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.loading-text {
+  font-size: 0.875rem;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* weather start */
+
 /* Hero Section */
 .hero{
     min-height: 100vh;
@@ -143,7 +176,7 @@ h1 {
 }
 
 .hero .image_hero  {
-    margin-top: 80px;
+    margin-top: 15px;
     width: 50%;
 }
 

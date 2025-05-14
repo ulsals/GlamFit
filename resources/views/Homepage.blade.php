@@ -36,6 +36,28 @@
     </nav>
     <!-- Navbar End -->
 
+    <!-- Weather Bar Start -->
+<div id="weather-bar" class="weather-bar">
+  <div class="loading-text">Memuat informasi cuaca...</div>
+</div>
+
+<div class="calendar-container">
+  <div class="calendar-controls">
+    <button onclick="changeMonth(-1)" class="nav-button">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="month-year-display" onclick="toggleMonthYear()">
+      <span id="monthYearSidebar" class="month-year-text"></span>
+    </div>
+
+    <button onclick="changeMonth(1)" class="nav-button">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+
     <!-- Hero Section Start -->
      <section class="hero" id="home">
       <div class="content">
